@@ -14,10 +14,10 @@ class ProductApiTest extends ApiTest {
 
     @Test
     void 상품등록_요청() {
-        final AddProductRequest request = 상품등록요청_생성();
+        final var request = 상품등록요청_생성();
 
         // API 요청
-        final ExtractableResponse<Response> response = 상품등록_요청(request);
+        final var response = 상품등록_요청(request);
 
         assertThat(response.statusCode()).isEqualTo(HttpStatus.CREATED.value());
     }
@@ -40,5 +40,4 @@ class ProductApiTest extends ApiTest {
         final AddProductRequest request = new AddProductRequest(name, price, discountPolicy);
         return request;
     }
-
 }
